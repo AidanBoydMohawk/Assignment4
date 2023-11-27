@@ -1,4 +1,6 @@
 ﻿using Raylib_cs;
+using System.Numerics;
+using System.Security.AccessControl;
 
 namespace Raylib_Features
 {
@@ -7,6 +9,8 @@ namespace Raylib_Features
         // If you need variables in the Program class (outside functions), you must mark them as static
         static string title = "PONG";
         static Ball ball;
+        static Paddle leftPaddle;
+        static Paddle rightPaddle;
         static void Main(string[] args)
         {
             // Create a window to draw to. The arguments define width and height
@@ -39,6 +43,8 @@ namespace Raylib_Features
         {
             // Your one-time setup code here
             ball = new Ball();
+            leftPaddle = new Paddle(0, Raylib.GetScreenHeight()/2 -45, Color.BLUE);
+            rightPaddle = new Paddle(Raylib.GetScreenWidth() - 10, Raylib.GetScreenHeight() / 2 - 45, Color.RED);
             
         }
         
@@ -48,6 +54,8 @@ namespace Raylib_Features
         {
             // Your game code run each frame here
             ball.draw();
+            leftPaddle.draw();
+            rightPaddle.draw();
             
         }
     }
