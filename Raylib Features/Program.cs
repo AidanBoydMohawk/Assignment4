@@ -5,7 +5,8 @@ namespace Raylib_Features
     internal class Program
     {
         // If you need variables in the Program class (outside functions), you must mark them as static
-        static string title = "Game Title";
+        static string title = "PONG";
+        static Ball ball;
         static void Main(string[] args)
         {
             // Create a window to draw to. The arguments define width and height
@@ -22,7 +23,7 @@ namespace Raylib_Features
                 // Enable drawing to the canvas (window)
                 Raylib.BeginDrawing();
                 // Clear the canvas with one color
-                Raylib.ClearBackground(Color.WHITE);
+                Raylib.ClearBackground(Color.BLACK);
 
                 // Your game code here. This is a function YOU define.
                 Update();
@@ -37,11 +38,17 @@ namespace Raylib_Features
         static void Setup()
         {
             // Your one-time setup code here
+            ball = new Ball();
+            
         }
+        
+        
 
         static void Update()
         {
             // Your game code run each frame here
+            ball.draw();
+            
         }
     }
-    }
+}
