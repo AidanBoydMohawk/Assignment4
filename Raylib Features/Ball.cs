@@ -42,7 +42,7 @@ namespace Raylib_Features
             speed_x *= -1;
             speed_y *= -1;
             speed_x *= 0.5;
-            speed_y += 0.5;
+            speed_y *= 0.5;
         }
     }
     
