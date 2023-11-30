@@ -39,10 +39,8 @@ namespace Raylib_Features
         public void bump()
         {
             //inverts ball direction and then halves momentum
-            speed_x *= -1;
-            speed_y *= -1;
-            speed_x *= 0.5;
-            speed_y *= 0.5;
+            speed_x *= -0.5;
+            speed_y *= -0.5;
             //sound for bumping should go here as well.
         }
         public void collide()
