@@ -26,14 +26,23 @@ namespace Raylib_Features
         }
         public void move()
         {
+            //moves the ball
             position.X += speed_x;
             position.Y += speed_y;
             speed_x *= 1.1;
             speed_x = Math.Max(speed_x, 2.0);
-            speed_x = Math.Min(speed_x, -2.0);
+            speed_x = Math.Min(speed_x, -2.0); //adds momentum with a maximum/minimum
             speed_y *= 1.1;
             speed_y = Math.Max(speed_y, 2.0);
-            speed_y = Math.Min(speed_y, -2.0);
+            speed_y = Math.Min(speed_y, -2.0); //adds momentum with a maximum/minimum
+        }
+        public void bump()
+        {
+            //inverts ball direction and then halves momentum
+            speed_x *= -1;
+            speed_y *= -1;
+            speed_x *= 0.5;
+            speed_y += 0.5;
         }
     }
     
