@@ -54,6 +54,8 @@ namespace Raylib_Features
         {
             // Your game code run each frame here
             ball.draw();
+            ball.move();
+            ball.collide();
             leftPaddle.draw();
             rightPaddle.draw();
             
