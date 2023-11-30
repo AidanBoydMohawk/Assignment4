@@ -6,7 +6,9 @@ namespace Raylib_Features
     public class Ball
     {
         Vector2 position;
-        float radius; 
+        float radius;
+        float speed_x = 1;
+        float speed_y = 1;  
 
         public Ball ()
         {
@@ -22,7 +24,19 @@ namespace Raylib_Features
             // set up draw. Chose Yellow as an objective
             Raylib.DrawCircleV(position, radius, Color.YELLOW);
         }
-
+        public void move()
+        {
+            position.X += speed_x;
+            position.Y += speed_y;
+            if (speed_x !> 2 || speed_x !< -2)
+            {
+                speed_x *= 1.1;
+            }
+            if (speed_y! > 2 || speed_y! < -2)
+            {
+                speed_y *= 1.1;
+            }
+        }
     }
     
 
