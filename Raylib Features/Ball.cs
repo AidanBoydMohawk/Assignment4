@@ -43,6 +43,22 @@ namespace Raylib_Features
             speed_y *= -1;
             speed_x *= 0.5;
             speed_y *= 0.5;
+            //sound for bumping should go here as well.
+        }
+        public void collide()
+        {
+            if (position.X == Paddle1.position.X && position.Y == Paddle1.position.Y)//check for collision against paddle 1
+            {
+                bump();
+            }
+            if (position.X == Paddle2.position.X && position.Y == Paddle2.position.Y)//check for collision against paddle 2
+            {
+                bump();
+            }
+            if (position.Y >= 800 || position.Y <= 0) //bounce against ceiling
+            {
+                speed_y *= -1;
+            }
         }
     }
     
