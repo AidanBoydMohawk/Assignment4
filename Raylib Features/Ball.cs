@@ -28,14 +28,12 @@ namespace Raylib_Features
         {
             position.X += speed_x;
             position.Y += speed_y;
-            if (speed_x !> 2 || speed_x !< -2)
-            {
-                speed_x *= 1.1;
-            }
-            if (speed_y! > 2 || speed_y! < -2)
-            {
-                speed_y *= 1.1;
-            }
+            speed_x *= 1.1;
+            speed_x = Math.Max(speed_x, 2.0);
+            speed_x = Math.Min(speed_x, -2.0);
+            speed_y *= 1.1;
+            speed_y = Math.Max(speed_y, 2.0);
+            speed_y = Math.Min(speed_y, -2.0);
         }
     }
     
