@@ -1,5 +1,4 @@
 ﻿using Raylib_cs;
-=======
 using System.Numerics;
 using System.Security.AccessControl;
 
@@ -7,9 +6,6 @@ namespace Raylib_Features
 {
     internal class Program
     {
-        // If you need variables in the Program class (outside functions), you must mark them as statc
-        static string title = "Game Title";
-=======
         static string title = "PONG";
         static Ball ball;
         static Paddle leftPaddle;
@@ -48,8 +44,7 @@ namespace Raylib_Features
         {
             // Your one-time setup code here
 
-        }
-=======
+        
             ball = new Ball();
             leftPaddle = new Paddle(0, Raylib.GetScreenHeight()/2 -45, Color.BLUE);
             rightPaddle = new Paddle(Raylib.GetScreenWidth() - 10, Raylib.GetScreenHeight() / 2 - 45, Color.RED);
@@ -61,9 +56,7 @@ namespace Raylib_Features
 
         static void Update()
         {
-            // Your game code run each frame here
-
-=======
+            
             ball.draw();
             ball.move();
             ball.collide();
@@ -84,9 +77,6 @@ namespace Raylib_Features
 
             Raylib.DrawText(scoreleftPaddle.ToString(), 75, 20, 32, Color.WHITE);
             Raylib.DrawText(scorerightPaddle.ToString(), -75, 20, 32, Color.WHITE);
-            {
-             
-            }
             
 
         }
