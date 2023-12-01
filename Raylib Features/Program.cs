@@ -11,6 +11,8 @@ namespace Raylib_Features
         static Ball ball;
         static Paddle leftPaddle;
         static Paddle rightPaddle;
+        static int scoreleftPaddle = 0;
+        static int scorerightPaddle = 0;
         static void Main(string[] args)
         {
             // Create a window to draw to. The arguments define width and height
@@ -58,6 +60,24 @@ namespace Raylib_Features
             ball.collide();
             leftPaddle.draw();
             rightPaddle.draw();
+
+            //score tracker 
+            if (ball.IsPastLeftSide())
+            {
+                scorerightPaddle++;
+                ball.reset();
+            }
+            if (ball.IsPastRightSide())
+            {
+               scoreleftPaddle++;
+                ball.reset();
+            }
+
+            Raylib.DrawText(scoreleftPaddle.ToString(), 75, 20, 32, Color.WHITE);
+            Raylib.DrawText(scorerightPaddle.ToString(), -75, 20, 32, Color.WHITE);
+            {
+             
+            }
             
         }
     }

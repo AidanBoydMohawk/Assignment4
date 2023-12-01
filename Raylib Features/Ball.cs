@@ -58,6 +58,31 @@ namespace Raylib_Features
                 speed_y *= -1;
             }
         }
+
+        public bool IsPastLeftSide()
+        {
+            float leftEdge = 0;
+            bool isPastLeftEdge = position.X < leftEdge;
+            return isPastLeftEdge;
+        }
+
+        public bool IsPastRightSide()
+        {
+            float rightEdge = Raylib.GetScreenWidth();
+            bool isPastRightEdge = position.X > rightEdge;
+            return isPastRightEdge;
+        }
+
+        public void reset()
+        {
+            //reset ball to the centre
+            position.X = Raylib.GetScreenWidth() / 2;
+            position.Y = Raylib.GetScreenHeight() / 2;
+            radius = 5;
+            speed_x *= 1.1;
+            speed_y *= 1.1;
+
+        }
     }
     
 
